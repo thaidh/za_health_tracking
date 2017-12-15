@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.healthtracking.ui.UserProfileActivity"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtStatement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đây là lần đầu tiên bạn sử dụng App. \nChúng tôi cần những thông tin sau để tính chính xác lượng Calo tiêu thụ của bạn"
+            android:textColor="@color/primaryText"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giới tính"
+                />
+
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="Nam"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/radioMale"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="Nữ"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/radioFemale"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cân nặng (kg)"
+                />
+
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hoàn thành"
+            android:layout_gravity="center"
+            android:id="@+id/btnDone"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

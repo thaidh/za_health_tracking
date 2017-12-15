@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/primary</color>
+    <color name="colorPrimaryDark">@color/primary_dark</color>
+    <color name="colorAccent">@color/accent</color>
+
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#757575</color>
+    <color name="backgroundBack">#EDEDED</color>
+    <color name="backgroundFront">#FFFFFF</color>
+
+    <color name="map_path_inner">#07b4ec</color>
+    <color name="map_path_outer">#4a90e2</color>
+    <color name="baseui_light_theme_tertiary">#42000000</color>
+    <color name="tracker_sport_map_button_stroke_color">#42a6a6a6</color>
+    <color name="tracker_sport_map_button_color">#fffafafa</color>
+</resources>

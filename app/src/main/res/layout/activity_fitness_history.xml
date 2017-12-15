@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.healthtracking.ui.FitnessTrackingTrendActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/stepHistoryRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scrollbars="none" />
+
+                <Spinner
+                    android:layout_margin="10dp"
+                    android:id="@+id/spType"
+                    android:layout_width="140dp"
+                    android:layout_height="26dp"/>
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/summaryStepsLayout"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thu, May 18"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/stepCountLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                   android:gravity="center"
+                    android:layout_marginTop="20px"
+                    >
+
+                    <TextView
+                        android:id="@+id/currentSteps"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3539"
+                        android:textColor="@color/primaryText"
+                        android:textSize="40sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/"
+                        android:id="@+id/devider"
+                        android:textSize="18sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/targetSteps"
+                        android:text="10000"
+                        android:textSize="18sp"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/labelDailySteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Daily steps"
+                    android:textAlignment="center"
+                    android:textColor="@color/primaryText"
+                    android:textSize="18sp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutDailyStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20px"
+                >
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chartDailyStep"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
+
+            </LinearLayout>
+
+            <include android:id="@+id/detail_list_item_distance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/detail_list_item"/>
+
+            <include android:id="@+id/detail_list_item_calories_burned"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/detail_list_item"/>
+
+            <include android:id="@+id/detail_list_item_healthy_pace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/detail_list_item"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

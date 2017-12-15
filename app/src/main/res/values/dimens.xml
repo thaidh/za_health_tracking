@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="running_summary_map_height">250dp</dimen>
+
+    <dimen name="map_path_inner">2dp</dimen>
+    <dimen name="map_path_outer">4dp</dimen>
+</resources>

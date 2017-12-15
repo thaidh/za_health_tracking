@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/backgroundBack"
+    >
+
+    <TextView
+        android:id="@+id/txtDistance"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:text="KM"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/txtPace"
+        android:layout_toRightOf="@+id/txtDistance"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:text="PACE"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/txtPace"
+        android:layout_alignParentRight="true"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:id="@+id/shapePaceContainer"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

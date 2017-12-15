@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="50dp"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:id="@+id/itemContainer"
+    >
+
+    <LinearLayout
+        android:id="@+id/stepHigh"
+        android:layout_width="12dp"
+        android:layout_height="50dp"
+        android:background="@drawable/verticle_rectangle"
+        android:layout_gravity="center"
+        android:orientation="vertical" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/stepHistoryBackground"
+        >
+
+        <View
+            android:id="@+id/viewCircleBackground"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_background_step_history"
+            >
+        </View>
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:text="7/5"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:visibility="visible" />
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/activeLabel"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/circle_background_step_history"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="23"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textSize="18sp"-->
+            <!--android:visibility="gone" />-->
+    </FrameLayout>
+
+
+</LinearLayout>

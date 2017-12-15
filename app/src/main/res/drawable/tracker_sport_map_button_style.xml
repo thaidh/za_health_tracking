@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/winset_btn_default_pressed" />
+    <item android:state_focused="true" android:drawable="@drawable/winset_btn_default_focused" />
+    <item android:state_selected="true" android:drawable="@drawable/winset_btn_default_selected" />
+    <item android:state_enabled="false" android:drawable="@drawable/winset_btn_default_disabled" />
+    <item android:state_focused="true" android:state_enabled="false" android:drawable="@drawable/winset_btn_default_disabled_focused" />
+    <item android:drawable="@drawable/winset_btn_default_normal" />
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/baseui_light_theme_tertiary" />
+            <corners android:radius="2.0dip" />
+        </shape>
+    </item>
+    <item android:bottom="2.0px">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tracker_sport_map_button_color" />
+            <stroke android:width="1.0px" android:color="@color/tracker_sport_map_button_stroke_color" />
+            <corners android:radius="2.0dip" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.healthtracking.ui.RunningZoomInActivity"
+    android:orientation="vertical"
+    >
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/map_size_switcher_button"
+            android:background="@drawable/tracker_sport_map_button_style"
+            android:paddingLeft="8.0dip"
+            android:paddingTop="8.0dip"
+            android:paddingRight="8.0dip"
+            android:paddingBottom="8.0dip"
+            android:layout_width="36.0dip"
+            android:layout_height="36.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8.0dip"
+            android:layout_marginRight="8.0dip"
+            android:src="@drawable/tracker_sport_workout_ic_zoomout"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
