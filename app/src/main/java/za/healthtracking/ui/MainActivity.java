@@ -34,8 +34,10 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -59,8 +61,16 @@ public class MainActivity extends AppCompatActivity {
     TextView txtDistance;
     @BindView(R.id.txtCalories)
     TextView txtCalories;
+
+
     @BindView(R.id.chartDailyStep)
     CombinedChart chartDailyStep;
+
+    @BindView(R.id.txtStartTime)
+    TextView txtGoBed;
+    @BindView(R.id.txtEndTime)
+    TextView txtWakeUp;
+
 
     //
     public static TextView txtUserState;
@@ -336,15 +346,22 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnRunningActivity)
     void onStartIntentRunningActivity() {
-//        Intent intent = new Intent(this, RunningActivity.class);
-//        startActivity(intent);
-//        SleepDetection.updateSleepTime();
+        Intent intent = new Intent(this, RunningActivity.class);
+        startActivity(intent);
+    }
 
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd  'at' hh:mm:ss");
+    @OnClick(R.id.btnGetSleep)
+    void onShowDailySleep() {
         SleepEstimationManager.getInstance().startSleepEstimation();
         EstimatedSleepItem estimatedSleepItem = SleepEstimationManager.getInstance().getEstimatedSleepItem(System.currentTimeMillis());
-//        if (estimatedSleepItem != null) {
-//            Log.i("ZHEALTH", "Bed time: " + estimatedSleepItem.getBedTime() + "\nWake time: " + estimatedSleepItem.getWakeUpTime());
-//        }
+        if (estimatedSleepItem != null) {
+            Log.i("ZHEALTH", "Bed time: " + estimatedSleepItem.getBedTime() + "\nWake time: " + estimatedSleepItem.getWakeUpTime());
+            Date goBed = new Date(estimatedSleepItem.getBedTime());
+            Date wakeUp = new Date(estimatedSleepItem.getWakeUpTime());
+            txtGoBed.setText(sdf.format(goBed));
+            txtWakeUp.setText(sdf.format(wakeUp));
+        }
     }
 
     @OnClick(R.id.chartDailyStepContainer)

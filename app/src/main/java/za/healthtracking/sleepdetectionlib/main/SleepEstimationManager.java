@@ -384,10 +384,11 @@ public class SleepEstimationManager {
                 bedTime = todayTime;
                 Log.d(TAG, "Sleep_Estimation_Manager : getEstimatedSleepItem[" + selectedDate + "] : bed time is future!");
             }
-            if (wakeUpTime > todayTime) {
-                wakeUpTime = todayTime;
-                Log.d(TAG, "Sleep_Estimation_Manager : getEstimatedSleepItem[" + selectedDate + "] : wake-up time is future!");
-            }
+            //todo hardcode
+//            if (wakeUpTime > todayTime) {
+//                wakeUpTime = todayTime;
+//                Log.d(TAG, "Sleep_Estimation_Manager : getEstimatedSleepItem[" + selectedDate + "] : wake-up time is future!");
+//            }
             if (bedTime > -1 && wakeUpTime > -1 && bedTime >= wakeUpTime) {
                 bedTime = -1;
                 wakeUpTime = -1;
