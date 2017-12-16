@@ -46,6 +46,8 @@
             android:name="za.healthtracking.service.PedometerService"
             android:enabled="true"
             android:exported="true" />
+        <service
+            android:name="za.healthtracking.sleepdetectionlib.service.SleepTrackerServiceManager"/>
 
         <activity android:name="za.healthtracking.ui.RunningSummaryActivity" />
         <activity android:name="za.healthtracking.ui.UserProfileActivity" />

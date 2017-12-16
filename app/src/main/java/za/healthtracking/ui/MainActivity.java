@@ -45,6 +45,10 @@ import vn.zing.pedometer.R;
 import za.healthtracking.app.Settings;
 import za.healthtracking.models.FitnessBucket.FitnessBucket;
 import za.healthtracking.service.PedometerService;
+import za.healthtracking.sleepdetectionlib.engine.EstimatedSleepItem;
+import za.healthtracking.sleepdetectionlib.main.SleepDetection;
+import za.healthtracking.sleepdetectionlib.main.SleepEstimationManager;
+import za.healthtracking.sleepdetectionlib.service.SleepTrackerServiceManager;
 import za.healthtracking.utils.Helper;
 import za.healthtracking.utils.TimeHelper;
 
@@ -295,6 +299,8 @@ public class MainActivity extends AppCompatActivity {
             Intent serviceIntent = new Intent(getApplicationContext(), PedometerService.class);
             startService(serviceIntent);
 
+            startService(new Intent(getApplicationContext(), SleepTrackerServiceManager.class));
+
             // Update UI
             handler.sendMessageDelayed(Message.obtain(handler, 0), 0);
             Log.d("ZHealth", "onServiceConnected!");
@@ -330,8 +336,15 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnRunningActivity)
     void onStartIntentRunningActivity() {
-        Intent intent = new Intent(this, RunningActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, RunningActivity.class);
+//        startActivity(intent);
+//        SleepDetection.updateSleepTime();
+
+        SleepEstimationManager.getInstance().startSleepEstimation();
+        EstimatedSleepItem estimatedSleepItem = SleepEstimationManager.getInstance().getEstimatedSleepItem(System.currentTimeMillis());
+//        if (estimatedSleepItem != null) {
+//            Log.i("ZHEALTH", "Bed time: " + estimatedSleepItem.getBedTime() + "\nWake time: " + estimatedSleepItem.getWakeUpTime());
+//        }
     }
 
     @OnClick(R.id.chartDailyStepContainer)

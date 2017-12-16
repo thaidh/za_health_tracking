@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import za.healthtracking.app.Settings;
+import za.healthtracking.sleepdetectionlib.engine.SleepItem;
 
 /**
  * Created by hiepmt on 01/08/2017.
@@ -162,4 +163,18 @@ public class TimeHelper {
 
         return cal.getTime();
     }
+
+    public static long getSleepDate(SleepItem item) {
+        if (item == null) {
+            return 0;
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(item.getBedTime());
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTimeInMillis();
+    }
+
 }
