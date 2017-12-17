@@ -66,7 +66,8 @@ public final class SleepDetectionEngine {
             this.mScreenReceiver = new Receiver_Screen();
             context.registerReceiver(this.mScreenReceiver, filter);
             if (context != null) {
-                ScheduleManager.getInstance().addSchedule(context, new ScheduleTodoWork(0, ScheduleTodoWork.TriggerTime.MIDNIGHT_HALF_TIME, 43200000, true, "com.samsung.android.sleepdetection.alarmtarget.sleep", this.todoSleepWork));
+                ScheduleManager.getInstance().addSchedule(context,
+                        new ScheduleTodoWork(0, ScheduleTodoWork.TriggerTime.MIDNIGHT_HALF_TIME, 43200000, true, "com.samsung.android.sleepdetection.alarmtarget.sleep", this.todoSleepWork));
             }
         }
     }

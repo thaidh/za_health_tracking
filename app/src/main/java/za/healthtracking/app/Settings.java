@@ -14,7 +14,9 @@ public class Settings {
 
     static final String USER_PROFILE_WEIGHT = "user_profile_weight";
     public static float getUserProfileWeight() {
-        return SharePrefs.getInstance().GetFloat(USER_PROFILE_WEIGHT);
+        float w = SharePrefs.getInstance().GetFloat(USER_PROFILE_WEIGHT);
+
+        return w <= 5 ? 60  : w;
     }
 
     public static void setUserProfileWeight(float weight) {

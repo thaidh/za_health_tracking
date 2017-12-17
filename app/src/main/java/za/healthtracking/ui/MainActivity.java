@@ -48,7 +48,6 @@ import za.healthtracking.app.Settings;
 import za.healthtracking.models.FitnessBucket.FitnessBucket;
 import za.healthtracking.service.PedometerService;
 import za.healthtracking.sleepdetectionlib.engine.EstimatedSleepItem;
-import za.healthtracking.sleepdetectionlib.main.SleepDetection;
 import za.healthtracking.sleepdetectionlib.main.SleepEstimationManager;
 import za.healthtracking.sleepdetectionlib.service.SleepTrackerServiceManager;
 import za.healthtracking.utils.Helper;
@@ -70,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     TextView txtGoBed;
     @BindView(R.id.txtEndTime)
     TextView txtWakeUp;
+    @BindView(R.id.txtDuration)
+    TextView txtDuration;
 
 
     //
@@ -350,17 +351,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd  'at' hh:mm:ss");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd  'at' HH:mm:ss");
     @OnClick(R.id.btnGetSleep)
     void onShowDailySleep() {
         SleepEstimationManager.getInstance().startSleepEstimation();
         EstimatedSleepItem estimatedSleepItem = SleepEstimationManager.getInstance().getEstimatedSleepItem(System.currentTimeMillis());
         if (estimatedSleepItem != null) {
-            Log.i("ZHEALTH", "Bed time: " + estimatedSleepItem.getBedTime() + "\nWake time: " + estimatedSleepItem.getWakeUpTime());
+            long durationInMinutes = (estimatedSleepItem.getWakeUpTime() - estimatedSleepItem.getBedTime()) / 60000 ;
+            if (durationInMinutes > 0) {
+                long hour = durationInMinutes / 60;
+                long minute = durationInMinutes % 60;
+                txtDuration.setText("Duration " + hour +":"+minute);
+            }
             Date goBed = new Date(estimatedSleepItem.getBedTime());
             Date wakeUp = new Date(estimatedSleepItem.getWakeUpTime());
-            txtGoBed.setText(sdf.format(goBed));
-            txtWakeUp.setText(sdf.format(wakeUp));
+            txtGoBed.setText("Bed time: " + sdf.format(goBed));
+            txtWakeUp.setText("Wake time: " + sdf.format(wakeUp));
+        } else {
+            txtDuration.setText("DATA NOT AVAILABLE NOW!");
         }
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zalo Health</string>
+    <string name="app_name">Health Tracking</string>
     <string name="google_maps_key">AIzaSyD-p8YS48Iyps1jUxcQHQHDWMBGlSOrc9U</string>
 
     <string name="permission_location_denied_explanation">Ứng dụng cần quyền truy cập Vị trí để sử dụng một số tính năng</string>

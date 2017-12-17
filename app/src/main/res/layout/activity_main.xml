@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    >
+    android:orientation="vertical">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
-        android:orientation="vertical"
         android:background="@color/backgroundBack"
-        >
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/backgroundFront"
-            android:padding="10dp"
-            >
+            android:padding="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,22 +28,22 @@
                 android:orientation="vertical"
 
                 >
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Calories"
-                    android:textColor="@color/primary_text"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/primary_text" />
+
                 <TextView
                     android:id="@+id/txtCalories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="123"
-                    android:textSize="30sp"
-                    android:textColor="@color/calories"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/calories"
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -54,22 +52,22 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Steps"
-                    android:textColor="@color/primary_text"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/primary_text" />
+
                 <TextView
                     android:id="@+id/txtSteps"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="1000"
-                    android:textSize="30sp"
-                    android:textColor="@color/primary"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/primary"
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -78,60 +76,57 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="KM"
-                    android:textColor="@color/primary_text"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/primary_text" />
+
                 <TextView
                     android:id="@+id/txtDistance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="3.12"
-                    android:textSize="30sp"
-                    android:textColor="@color/distanceInMeters"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@color/distanceInMeters"
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:padding="10dp"
             android:id="@+id/chartDailyStepContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:foreground="?android:attr/selectableItemBackground"
             android:layout_marginTop="5dp"
             android:background="@color/backgroundFront"
-            >
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="10dp">
+
             <com.github.mikephil.charting.charts.CombinedChart
                 android:id="@+id/chartDailyStep"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                />
+                android:layout_height="100dp" />
         </LinearLayout>
 
         <RelativeLayout
-            android:padding="10dp"
             android:id="@+id/runningTrend"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:background="@color/backgroundFront"
             android:layout_marginTop="5dp"
+            android:background="@color/backgroundFront"
             android:foreground="?android:attr/selectableItemBackground"
-            >
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chạy bộ"
                 android:textAlignment="center"
-                android:textColor="@color/primary"
-                />
+                android:textColor="@color/primary" />
 
             <Button
                 android:id="@+id/btnRunningActivity"
@@ -139,8 +134,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:textAllCaps="false"
-                android:text="Bắt đầu" />
+                android:text="Bắt đầu"
+                android:textAllCaps="false" />
 
         </RelativeLayout>
 
@@ -148,11 +143,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/backgroundFront"
             android:layout_marginTop="5dp"
+            android:background="@color/backgroundFront"
             android:orientation="vertical"
-            android:padding="10dp"
-            >
+            android:padding="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -160,17 +155,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="State: "
-                    />
+                    android:text="State: " />
 
                 <TextView
-                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtUserState"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="User is very lame"
-                    android:textSize="20sp"
-                    android:id="@+id/txtUserState"
-                    />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -181,17 +174,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Step length: "
-                    />
+                    android:text="Step length: " />
 
                 <TextView
                     android:id="@+id/txtStepLength"
-                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="0"
-                    android:textSize="20sp"
-                    />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -202,17 +193,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Step frequency: "
-                    />
+                    android:text="Step frequency: " />
 
                 <TextView
                     android:id="@+id/txtStepFrequency"
-                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:text="0"
-                    android:textSize="20sp"
-                    />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -221,6 +210,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/backgroundFront"
             android:orientation="vertical">
 
             <Button
@@ -229,32 +219,36 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:textAllCaps="false"
-                android:text="Sleep" />
+                android:text="Estimate Sleep"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/txtDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="0"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txtStartTime"
-                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="0"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txtEndTime"
-                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="0"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>

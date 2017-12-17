@@ -14,6 +14,7 @@ public class Receiver_Screen extends BroadcastReceiver {
     private static boolean lastScreenOn = false;
     private String TAG = getClass().getSimpleName();
     private Random random = new Random();
+    int increaseRandomTime = 0;
 
     private void insertData(final ScreenModel screenModel) {
         synchronized (this) {
@@ -32,12 +33,12 @@ public class Receiver_Screen extends BroadcastReceiver {
                 return;
             }
             if (action.equals("android.intent.action.SCREEN_OFF")) {
-                Log.d(this.TAG, "ACTION_SCREEN_OFF");
-                insertData(new ScreenModel(System.currentTimeMillis(), 0, 0, 0));
+                Log.e(this.TAG, "ACTION_SCREEN_OFF:" + increaseRandomTime);
+                insertData(new ScreenModel(System.currentTimeMillis() + increaseRandomTime, 0, 0, 0));
                 lastScreenOn = false;
             } else if (action.equals("android.intent.action.SCREEN_ON")) {
-                int increaseRandomTime = 3600000 * (random.nextInt(10) + 1);
-                Log.d(this.TAG, "ACTION_SCREEN_ON: "  + increaseRandomTime);
+                increaseRandomTime = 0;
+                Log.e(this.TAG, "ACTION_SCREEN_ON: "  + increaseRandomTime);
                 insertData(new ScreenModel(System.currentTimeMillis() + increaseRandomTime, 1, 0, 0));
 
                 lastScreenOn = true;

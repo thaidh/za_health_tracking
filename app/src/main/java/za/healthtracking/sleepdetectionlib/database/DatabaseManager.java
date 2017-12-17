@@ -40,13 +40,14 @@ public final class DatabaseManager {
     public final void insertData(ScreenModel data) {
         synchronized (this) {
             try {
-                if (SleepDetectionManager.mContext == null) {
+               /* if (SleepDetectionManager.mContext == null) {
                     data.setUseKeyGuard(0);
                 } else if (((KeyguardManager) SleepDetectionManager.mContext.getSystemService(Context.KEYGUARD_SERVICE)).inKeyguardRestrictedInputMode()) {
                     data.setUseKeyGuard(1);
                 } else {
                     data.setUseKeyGuard(0);
-                }
+                }*/
+                data.setUseKeyGuard(0);
                 if (DatabaseOpenHelper_Switch.getInstance().getDatabase() != null) {
                     DBTable_Screen.getInstance().insertData(DatabaseOpenHelper_Switch.getInstance().getDatabase(), data);
                 }
